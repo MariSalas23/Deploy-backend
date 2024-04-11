@@ -3,6 +3,11 @@ const axios = require("axios");
 
 const router = express.Router();
 
+// /coins
+router.get("/", (req, res) => {
+    res.send("Busca una moneda. Prueba con: /coins/bitcoin");
+});
+
 // /coins/coinName
 router.get("/:coinName", async (req, res) => {
   const coinName = req.params.coinName.toLowerCase();

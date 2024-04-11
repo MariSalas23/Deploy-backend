@@ -1,11 +1,24 @@
 const express = require("express");
-const usersData = require("../assets/names");
+const usersInfo = require("../assets/names");
 const router = express.Router();
 
 // /users
-router.get("/", async (req, res) => {
-    return res.send("Crear usuario");
-}); 
+router.post("/", (req, res) => {
+    const {name,lastName,email,city="Bogotá",country="Colombia"} = req.body;
+    if (!name || !lastName || !email) {
+        return res.send("Los campos de nombre, apellido y correo electrónico son obligatorios. Ciudad y país opcionales.");
+    }
+
+    const user = {
+        name,
+        lastName,
+        email,
+        city,
+        country
+    };
+    usersInfo.push(user);
+    res.json(user);
+});
 
 // /count?sort=ASC|DESC
 router.get("/:count", async (req, res) => {
@@ -21,16 +34,16 @@ router.get("/:count", async (req, res) => {
     }
 
     // Mostrar la lista de nombres
-    let listUsers = usersData.slice();
+    let listUsers = usersInfo.slice();
     if (sort === "ASC") {
         // A a Z
-        listUsers.sort((a, b) => a.surname.localeCompare(b.surname));
+        listUsers.sort((a, b) => a.lastName.localeCompare(b.lastName));
     } else {
         // Z a A
-        listUsers.sort((a, b) => b.surname.localeCompare(a.surname));
+        listUsers.sort((a, b) => b.lastName.localeCompare(a.lastName));
     }
 
-    listUsers = listUsers.slice(0, count).map(user => `${user.surname} ${user.name}`);
+    listUsers = listUsers.slice(0, count).map(user => `${user.lastName} ${user.name}`);
     res.send(listUsers);
 });
 
