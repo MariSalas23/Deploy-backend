@@ -10,6 +10,9 @@ https://parcial-segundo-corte-five.vercel.app/
 ## Repositorio usado para desplegar en Vercel
 https://github.com/MariSalas23/Deploy-backend.git
 
+## Repositorio original
+https://github.com/DSAW-2024-1/parcial-segundo-corte-MariSalas23.git
+
 ## Imágenes
 Inicio
 
