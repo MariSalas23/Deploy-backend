@@ -24,10 +24,10 @@ router.get("/:count", async (req, res) => {
     let listUsers = usersData.slice();
     if (sort === "ASC") {
         // A a Z
-        listUsers.sort((a, b) => (a.surname > b.surname ? 1 : -1));
+        listUsers.sort((a, b) => a.surname.localeCompare(b.surname));
     } else {
         // Z a A
-        listUsers.sort((a, b) => (a.surname < b.surname ? 1 : -1));
+        listUsers.sort((a, b) => b.surname.localeCompare(a.surname));
     }
 
     listUsers = listUsers.slice(0, count).map(user => `${user.surname} ${user.name}`);
