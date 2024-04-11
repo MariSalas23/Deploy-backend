@@ -9,14 +9,18 @@ const coinsRouter = require("./routes/coins");
 app.use("/coins", coinsRouter);
 app.use(logger);
 
+const usersRouter = require("./routes/users");
+app.use("/users", usersRouter);
+app.use(logger);
+
 // URL - Callback
 app.get("/", customLogger, (req, res) => {
-    res.send("Busca el valor de una moneda. Por ejemplo: /coins/bitcoin");
+    res.send("¡Bienvenido!<br><br>Busca el valor de una moneda. Por ejemplo: /coins/bitcoin<br>Busca en una lista de nombres. Por ejemplo: /users/10?sort=DESC<br>Crea un usuario con: /users");
   });  
 
 // Ruta para cualquier otra URL
 app.get("*", (req, res) => {
-    res.send("Ruta no encontrada. Prueba: /coins/bitcoin");
+    res.send("Ruta no encontrada. Prueba con: /coins/bitcoin");
   });
 
 // Middleware
@@ -30,6 +34,7 @@ function customLogger(req, res, next) {
   next();
 }
 
+// Para las pruebas
 app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
