@@ -15,12 +15,12 @@ app.use(logger);
 
 // URL - Callback
 app.get("/", customLogger, (req, res) => {
-    res.send("¡Bienvenido!<br><br>Busca el valor de una moneda. Por ejemplo: https://parcial-segundo-corte-five.vercel.app/coins/bitcoin<br>Busca en una lista de nombres. Por ejemplo: https://parcial-segundo-corte-five.vercel.app/users/10?sort=DESC<br>Crea un usuario con: https://parcial-segundo-corte-five.vercel.app/users<br><br>Mariana Salas");
+    res.send("¡Bienvenido!<br><br>Busca el valor de una moneda. Por ejemplo: https://parcial-segundo-corte-five.vercel.app/coin/bitcoin<br>Busca en una lista de nombres. Por ejemplo: https://parcial-segundo-corte-five.vercel.app/users/10?sort=DESC<br>Crea un usuario con: https://parcial-segundo-corte-five.vercel.app/users<br><br>Mariana Salas");
   });  
 
 // Ruta para cualquier otra URL
 app.get("*", (req, res) => {
-    res.send("Ruta no encontrada. Prueba una válida como: /coins/bitcoin");
+    res.send("Ruta no encontrada. Prueba una válida como: /coin/bitcoin");
   });
 
 // Middleware
