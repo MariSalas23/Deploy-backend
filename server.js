@@ -5,8 +5,8 @@ app.use(express.urlencoded({ extended: true })); // Para acceder al body
 app.use(express.json());
 
 // Routes
-const coinsRouter = require("./routes/coins");
-app.use("/coins", coinsRouter);
+const coinsRouter = require("./routes/coin");
+app.use("/coin", coinsRouter);
 app.use(logger);
 
 const usersRouter = require("./routes/users");
