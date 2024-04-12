@@ -10,9 +10,6 @@ https://parcial-segundo-corte-five.vercel.app/
 ## Repositorio usado para desplegar en Vercel
 https://github.com/MariSalas23/Deploy-backend.git
 
-## Repositorio original
-https://github.com/DSAW-2024-1/parcial-segundo-corte-MariSalas23.git
-
 ## Imágenes
 Inicio
 
@@ -29,6 +26,10 @@ Ejemplo users con count y sort
 Ejemplo users
 
 ![Vista users](./assets/users.jpg)
+
+Ejemplo users con POSTMAN
+
+![Vista users](./assets/postman.jpg)
 
 ### Instrucciones Generales
 - El examen consta de tres partes, cada una correspondiente a una ruta de una API REST desarrollada con Express, todas deben desarrollarse dentro de la misma aplicación.
