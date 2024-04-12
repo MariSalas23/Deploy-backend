@@ -17,7 +17,7 @@ Inicio
 
 Ejemplo coins
 
-![Vista](./assets/coin.jpg)
+![Vista](./assets/coins.jpg)
 
 Ejemplo users con count y sort
 
